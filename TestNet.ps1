@@ -51,8 +51,8 @@ public class Audio
 
 
 While (1) {
-	If ((Test-Connection 8.8.8.8 -count 1 -quiet) -eq 1) {
- Write 'The host responded'
+	If ((Test-Connection 8.8.8.8 -count 1 -quiet) -eq 0) {
+ Write 'Connection lost. Playing sound...'
  [audio]::Mute = $false
  [audio]::Volume  = 0.3
  ./dzwiek.wav
